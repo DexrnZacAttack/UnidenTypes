@@ -1,0 +1,7 @@
+{
+  "name": "uniden-types",
+  "version": "1.0.0",
+  "main": "Main.d.ts",
+  "types": "Main.d.ts",
+  "private": true
+}
