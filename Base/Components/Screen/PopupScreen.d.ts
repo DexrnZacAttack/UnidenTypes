@@ -1,5 +1,5 @@
-import { ComponentHolder } from '../ComponentHolder';
+import { ComponentContainer } from '../ComponentContainer';
 
-export interface PopupScreen extends ComponentHolder {
+export interface PopupScreen extends ComponentContainer {
 	Text: string;
 }

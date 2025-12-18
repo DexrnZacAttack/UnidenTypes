@@ -1,0 +1,1 @@
+export type Modulation = "Auto" | "AM" | "NFM" | "FM" | "WFM" | "FMB";

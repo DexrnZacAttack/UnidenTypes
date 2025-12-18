@@ -1,5 +1,5 @@
 import { Component } from './Component';
 
-export interface ComponentHolder extends Component {
+export interface ComponentContainer extends Component {
 	Children: Array<Component>
 }

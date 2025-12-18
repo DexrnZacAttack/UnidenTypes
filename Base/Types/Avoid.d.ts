@@ -1,0 +1,1 @@
+export type Avoid = "Avoid" | "T-Avoid" | "Off";

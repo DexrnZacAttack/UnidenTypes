@@ -1,5 +1,9 @@
 import { UnidenBool } from '../Base/Uniden';
 import { Component } from '../Base/Components/Component';
+import { Avoidable } from '../Base/Avoidable';
+import { Holdable } from '../Base/Holdable';
+import { TypeEntry } from '../Base/TypeEntry';
+import { Modulation } from '../Base/Types/Modulation';
 
 export type ScannerMode = "Scan Mode"
 	| "Scan Hold"
@@ -37,9 +41,6 @@ export type ScannerScreen = "plain_text"
 	| "analyze_system_status"
 	| "analyze";
 
-export type Avoid = "Avoid" | "T-Avoid" | "Off";
-export type Modulation = "Auto" | "AM" | "NFM" | "FM" | "WFM" | "FMB";
-
 export interface ScannerInfo {
 	// Scan Mode
 	MonitorList?:      MonitorList;
@@ -60,14 +61,10 @@ export interface MenuSummary {
 	name: string;
 }
 
-export interface ConvFrequency {
-	Name:    string;
-	Index:   string;
-	Avoid:   Avoid;
+export interface ConvFrequency extends TypeEntry, Avoidable, Holdable {
 	Freq:    string;
 	Mod:     Modulation;
 	N_Tag:   string;
-	Hold:    UnidenBool;
 	SvcType: string;
 	P_Ch:    UnidenBool;
 	SAS:     string;
@@ -79,12 +76,8 @@ export interface ConvFrequency {
 	U_Id:    string;
 }
 
-export interface Department {
-	Name:  string;
-	Index: string;
-	Avoid: Avoid;
+export interface Department extends TypeEntry, Avoidable, Holdable {
 	Q_Key: string;
-	Hold:  UnidenBool;
 }
 
 export interface DualWatch {
@@ -93,9 +86,7 @@ export interface DualWatch {
 	WX:  "Off" | "Priority";
 }
 
-export interface MonitorList {
-	Name:       string;
-	Index:      string;
+export interface MonitorList extends TypeEntry {
 	ListType:   string;
 	Q_Key:      string;
 	N_Tag:      string;
@@ -119,14 +110,10 @@ export interface Property {
 	Rssi:      string;
 }
 
-export interface System {
-	Name:       string;
-	Index:      string;
-	Avoid:      Avoid;
+export interface System extends TypeEntry, Avoidable, Holdable {
 	SystemType: string;
 	Q_Key:      string;
 	N_Tag:      string;
-	Hold:       UnidenBool;
 }
 
 export interface OverWrite {
