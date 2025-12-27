@@ -1,8 +1,8 @@
-export type Mode = ""
+import { Mode } from '../Base/Mode';
 
 export interface Line {
 	string: string;
-	mode: Mode;
+	mode: Array<Mode>;
 }
 
 export interface Status {

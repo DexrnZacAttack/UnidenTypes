@@ -4,6 +4,10 @@ import { Avoidable } from '../Base/Avoidable';
 import { Holdable } from '../Base/Holdable';
 import { TypeEntry } from '../Base/TypeEntry';
 import { Modulation } from '../Base/Types/Modulation';
+import { P25Status } from '../Base/Types/P25Status';
+import { LedColor } from '../Base/Types/LedColor';
+import {SearchMode} from "./SearchMode";
+import {ScanMode} from "./ScanMode";
 
 export type ScannerMode = "Scan Mode"
 	| "Scan Hold"
@@ -41,59 +45,56 @@ export type ScannerScreen = "plain_text"
 	| "analyze_system_status"
 	| "analyze";
 
-export interface ScannerInfo {
-	// Scan Mode
-	MonitorList?:      MonitorList;
-	System?:           System;
-	Department?:       Department;
-	ConvFrequency?:    ConvFrequency;
-	DualWatch?:        DualWatch;
-	Property?:         Property;
+export type ScannerInfo = Partial<ScanMode> & Partial<SearchMode> & {
+	Property?:        Property;
 	// Menu tree
 	MenuSummary?:     MenuSummary;
-	ViewDescription:  Array<Component>;
+	ViewDescription:  Array<Component<any>>;
 	Mode:             ScannerMode
 	V_Screen:         ScannerScreen;
 }
 
-export interface MenuSummary {
+export type MenuSummary = {
 	index: string; // suddenly lowercase
 	name: string;
 }
 
-export interface ConvFrequency extends TypeEntry, Avoidable, Holdable {
-	Freq:    string;
-	Mod:     Modulation;
+export type Frequency = TypeEntry & Avoidable & Holdable & {
+    Freq:    string;
+    Mod:     Modulation;
+    IFX:     UnidenBool;
+    RecSlot: string;
+    SAD:     string;
+    TGID:    string;
+    U_Id:    string;
+}
+
+export type ConvFrequency = Frequency & {
 	N_Tag:   string;
 	SvcType: string;
 	P_Ch:    UnidenBool;
 	SAS:     string;
-	SAD:     string;
-	RecSlot: string;
 	LVL:     string;
-	IFX:     UnidenBool;
-	TGID:    string;
-	U_Id:    string;
 }
 
-export interface Department extends TypeEntry, Avoidable, Holdable {
+export type Department = TypeEntry & Avoidable & Holdable & {
 	Q_Key: string;
 }
 
-export interface DualWatch {
+export type DualWatch = {
 	PRI: "Off" | "DND" | "Priority";
 	CC:  "Off" | "DND" | "Priority";
 	WX:  "Off" | "Priority";
 }
 
-export interface MonitorList extends TypeEntry {
+export type MonitorList = TypeEntry & {
 	ListType:   string;
 	Q_Key:      string;
 	N_Tag:      string;
 	DB_Counter: string;
 }
 
-export interface Property {
+export type Property = {
 	F:         UnidenBool;
 	VOL:       string;
 	SQL:       string;
@@ -101,21 +102,21 @@ export interface Property {
 	Att:       string;
 	Rec:       string;
 	KeyLock:   string;
-	P25Status: "None" | "Data" | "P25" | "DMR" | "CAP" | "CON" | "DT3" | "XPT" | "NX9" | "NX4" | "ND9" | "ND4" | "IDS" | "NXD";
+	P25Status: P25Status;
 	/** Whether someone is talking on a frequency */
 	Mute:      "Unmute" | "Mute";
 	Backlight: string;
-	A_Led:     "Off" | "Blue" | "Red" | "Magenta" | "Green" | "Cyan" | "Yellow" | "White";
+	A_Led:     LedColor;
 	Dir:       "Up" | "Down";
 	Rssi:      string;
 }
 
-export interface System extends TypeEntry, Avoidable, Holdable {
+export type System = TypeEntry & Avoidable & Holdable & {
 	SystemType: string;
 	Q_Key:      string;
 	N_Tag:      string;
 }
 
-export interface OverWrite {
+export type OverWrite = Component & {
 	Text: string;
 }

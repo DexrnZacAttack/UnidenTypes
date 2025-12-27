@@ -1,7 +1,9 @@
 {
   "name": "uniden-types",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "Main.d.ts",
   "types": "Main.d.ts",
-  "private": true
+  "private": true,
+  "author": "Dexrn ZacAttack",
+  "homepage": "https://dexrn.me"
 }

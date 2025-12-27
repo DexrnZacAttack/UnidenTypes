@@ -1,4 +1,4 @@
-import { ComponentContainer } from '../ComponentContainer';
+import { ComponentContainer } from './ComponentContainer';
 
 export interface PopupScreen extends ComponentContainer {
 	Text: string;

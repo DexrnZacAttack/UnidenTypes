@@ -1,5 +1,5 @@
 // System, Department, etc.
-export interface TypeEntry {
+export type TypeEntry = {
 	Name:    string;
 	Index:   string;
 }

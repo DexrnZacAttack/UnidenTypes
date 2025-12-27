@@ -1,5 +1,5 @@
 import { UnidenBool } from './Uniden';
 
-export interface Holdable {
+export type Holdable = {
 	Hold: UnidenBool;
 }

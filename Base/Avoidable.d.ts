@@ -1,5 +1,5 @@
 import { Avoid } from './Types/Avoid';
 
-export interface Avoidable {
-	Avoid: Avoid;
+export type Avoidable = {
+	Avoid: Avoid; // lockout
 }
