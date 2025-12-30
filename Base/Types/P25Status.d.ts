@@ -1,1 +1,15 @@
-export type P25Status = "None" | "Data" | "P25" | "DMR" | "CAP" | "CON" | "DT3" | "XPT" | "NX9" | "NX4" | "ND9" | "ND4" | "IDS" | "NXD";
+export type P25Status =
+    "None"
+    | "Data"
+    | "P25"
+    | "DMR"
+    | "CAP"
+    | "CON"
+    | "DT3"
+    | "XPT"
+    | "NX9"
+    | "NX4"
+    | "ND9"
+    | "ND4"
+    | "IDS"
+    | "NXD";

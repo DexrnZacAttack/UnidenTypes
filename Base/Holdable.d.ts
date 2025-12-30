@@ -1,5 +1,5 @@
-import { UnidenBool } from './Uniden';
+import {StringBool} from './Uniden';
 
 export type Holdable = {
-	Hold: UnidenBool;
+    Hold: StringBool;
 }

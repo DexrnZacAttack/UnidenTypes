@@ -18,8 +18,8 @@ export type SearchRange = {
 export type SrchFrequency = Frequency;
 
 export type SearchMode = {
-    DualWatch     : DualWatch;
-    SearchBanks   : SearchBanks;
-    SearchRange   : SearchRange;
-    SrchFrequency : SrchFrequency;
+    DualWatch: DualWatch;
+    SearchBanks: SearchBanks;
+    SearchRange: SearchRange;
+    SrchFrequency: SrchFrequency;
 }

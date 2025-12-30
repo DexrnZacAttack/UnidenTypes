@@ -1,5 +1,5 @@
 export enum Mode {
-	None = ' ',
-	Inverted = '*',
-	Underlined = '_'
+    None = ' ',
+    Inverted = '*',
+    Underlined = '_'
 }

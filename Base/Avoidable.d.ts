@@ -1,5 +1,5 @@
-import { Avoid } from './Types/Avoid';
+import {Avoid} from './Types/Avoid';
 
 export type Avoidable = {
-	Avoid: Avoid; // lockout
+    Avoid: Avoid; // lockout
 }
