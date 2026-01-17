@@ -1,7 +1,8 @@
 import {Component} from '../../Component';
 import {ComponentType} from "../../Components";
+import {IntegerBool} from "../../../Uniden";
 
 export type MenuErrorMsg = Component<ComponentType.MenuErrorMsg> & {
     Text: string;
-    ScanButton: string; // bool (1/0)
+    ScanButton: IntegerBool; // bool (1/0)
 }

@@ -3,11 +3,12 @@ import {PlainText} from './PlainText';
 import {InfoArea1, InfoArea2, InfoArea3} from './InfoArea';
 import {PopupScreen} from './Container/PopupScreen';
 import {Button} from './Controls/Button';
-import {OverWrite} from '../../SDS100/ScannerInformation';
+import {OverWrite} from './OverWrite';
 import {MenuItem} from './Controls/Menu/MenuItem';
 import {MenuErrorMsg} from './Controls/Menu/MenuErrorMsg';
 import {MenuInput} from './Controls/Menu/MenuInput';
 import {MenuInfo} from '../../SDS100/MenuInformation';
+import {MenuLocation} from "./Controls/Menu/MenuLocation";
 
 export enum ComponentType {
     Footer = "Footer",
@@ -22,6 +23,7 @@ export enum ComponentType {
     MenuItem = "MenuItem",
     MenuErrorMsg = "MenuErrorMsg",
     MenuInput = "MenuInput",
+	MenuLocation = "MenuLocation",
 }
 
 export type Components = {
@@ -36,5 +38,6 @@ export type Components = {
     MSI: MenuInfo,
     MenuItem: MenuItem,
     MenuErrorMsg: MenuErrorMsg,
-    MenuInput: MenuInput
+    MenuInput: MenuInput,
+	MenuLocation: MenuLocation,
 }

@@ -18,8 +18,9 @@ TypeScript types for various Uniden scanner protocols
 
 ## Credits
 
-[SDS Series Remote Command Specification v2.00 (Uniden.com)](https://info.uniden.com/twiki/pub/UnidenMan4/SDS100FirmwareUpdate/SDS_Series_RemoteCommand_Specification_V2_00.pdf)   
-[BCD996P2 Remote Protocol Specification v1.03 (Uniden.com)](https://info.uniden.com/twiki/pub/UnidenMan4/BCD996P2/BCD996P2_Remote_Protocol_ver_1_03.pdf)
+[SDS Series Remote Command Specification v2.00 (uniden.com)](https://info.uniden.com/twiki/pub/UnidenMan4/SDS100FirmwareUpdate/SDS_Series_RemoteCommand_Specification_V2_00.pdf)   
+[BCD996P2 Remote Protocol Specification v1.03 (uniden.com)](https://info.uniden.com/twiki/pub/UnidenMan4/BCD996P2/BCD996P2_Remote_Protocol_ver_1_03.pdf)   
+[SDS200 Remote Command Specification v1.02 (uniden.com)](https://info.uniden.com/twiki/pub/UnidenMan4/SDS200FirmwareUpdate/SDS200_RemoteCommand_Specification_V1_02.pdf)   
 
 ## Disclaimer
 

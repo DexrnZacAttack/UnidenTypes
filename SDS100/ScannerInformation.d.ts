@@ -46,6 +46,8 @@ export type ScannerScreen = "plain_text"
     | "analyze_system_status"
     | "analyze";
 
+export type SystemType = "Conventional" | "Motorola" | "EDACS" | "LTR" | "P25 Trunk" | "P25 One Frequency" | "MotoTRBO Trunk" | "DMR One Frequency" | "NXDN Trunk" | "NXDN One Frequency";
+
 export type ScannerInfo = Partial<ScanMode> & Partial<SearchMode> & {
     Property?: Property;
     // Menu tree
@@ -78,6 +80,12 @@ export type ConvFrequency = Frequency & {
     LVL: string;
 }
 
+export type System = TypeEntry & Avoidable & Holdable & {
+	SystemType: SystemType;
+	Q_Key: string;
+	N_Tag: string;
+}
+
 export type Department = TypeEntry & Avoidable & Holdable & {
     Q_Key: string;
 }
@@ -95,29 +103,56 @@ export type MonitorList = TypeEntry & {
     DB_Counter: string;
 }
 
-export type Property = {
+export type PortableProperties = {
+	/** Current battery voltage
+	 *
+	 * Value is a floating point string
+	 * 
+	 * @idealType `number`
+	 */
+	Battery?: string; // float voltage string
+	WiFi?: string; // Off, 0-3, or "AP"? Maybe AP means hooked through ethernet.
+}
+
+export type Direction = "Up" | "Down";
+
+export type Property = Partial<PortableProperties> & {
     F: StringBool;
+	/** Volume
+	 * 
+	 * @idealType `number`
+	 */
     VOL: string;
+	/** Squelch 
+	 * 
+	 * @idealType `number`
+	 */
     SQL: string;
+	/** Signal of the current talking frequency
+	 * 
+	 * @idealType `number`
+	 */
     Sig: Signal;
     Att: string;
-    Rec: string;
-    KeyLock: string;
+    Rec: StringBool;
+    KeyLock: StringBool;
     P25Status: P25Status;
-    /** Whether someone is talking on a frequency */
+    /** Whether someone is talking on a frequency
+	 * 
+	 * @idealType `boolean` 
+	 */
     Mute: "Unmute" | "Mute";
+	/** Backlight brightness
+	 * 
+	 * @idealType `number`
+	 */
     Backlight: string;
     A_Led: LedColor;
-    Dir: "Up" | "Down";
+	/** Scan direction */
+    Dir: Direction;
+	/** RSSI
+	 * 
+	 * @idealType `number`
+	 */
     Rssi: string;
-}
-
-export type System = TypeEntry & Avoidable & Holdable & {
-    SystemType: string;
-    Q_Key: string;
-    N_Tag: string;
-}
-
-export type OverWrite = Component & {
-    Text: string;
 }
